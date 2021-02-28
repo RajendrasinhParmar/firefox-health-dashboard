@@ -4,12 +4,10 @@ import Grid from '@material-ui/core/Grid';
 import DashboardPage from '../utils/DashboardPage';
 import Section from '../utils/Section';
 import BugzillaGraph from '../bugzilla/BugzillaGraph';
-import NimbledroidSection from '../nimbledroid/NimbledroidSection';
-import { PerfherderGraphContainer } from '../utils/PerfherderGraphContainer';
 import RedashContainer from '../utils/RedashContainer';
-import { SHOW_TELEMETRY } from './config';
-import { CONFIG } from '../nimbledroid/config';
+import { SHOW_TELEMETRY, COMBOS, PLATFORMS } from './config';
 import { TP6mAggregate } from './TP6mAggregate';
+import { PerfherderGraphContainer } from '../utils/PerfherderGraphContainer';
 import { TimeDomain } from '../vendor/jx/domains';
 import { selectFrom } from '../vendor/vectors';
 import { LinkIcon } from '../utils/icons';
@@ -21,9 +19,6 @@ import GithubGraph from '../github/GithubGraph';
 
 class Android extends Component {
   render() {
-    const nimbledroidSubTitle = `${
-      CONFIG.packageIdLabels[CONFIG.baseProduct]
-    } vs ${CONFIG.packageIdLabels[CONFIG.compareProduct]}`;
     const timeDomain = new TimeDomain({ past: '3month', interval: 'day' });
     const mediaPlaybackBrowser = selectFrom(BROWSERS)
       .where({ id: 'fenix' })
@@ -49,11 +44,12 @@ class Android extends Component {
                       </a>
                     </span>
                   )}
-
-
                   timeDomain={timeDomain}
                 />
               </Section>
+            </Grid>
+
+            <Grid item xs={6} key="bugzilla">
               <Section title="Bugzilla">
                 <BugzillaGraph
                   title={(
@@ -180,46 +176,42 @@ class Android extends Component {
                 />
               </Section>
             </Grid>
-
-            <Grid item xs={6} key="nimbledroid">
-              <Section title="Nimbledroid" subtitle={nimbledroidSubTitle}>
-                <NimbledroidSection configuration={{ ...CONFIG }} />
-              </Section>
-            </Grid>
           </Grid>
         </div>
         <Section
           title="Raptor (TP6m)"
           more="/android/tp6m?test=cold-loadtime&platform=geckoview-p2-aarch64"
         >
-          <TP6mAggregate timeDomain={timeDomain} browser="fenix" platform={['p2-aarch64', 'g5']} test="cold-loadtime" />
+          <TP6mAggregate
+            timeDomain={timeDomain}
+            browser="fenix"
+            platform={['p2-aarch64', 'g5']}
+            test="cold-loadtime"
+          />
         </Section>
-        { SHOW_TELEMETRY
-            && (
-            <Section title="Telemetry">
-              <Grid container spacing={1}>
-                <Grid item xs={6}>
-                  <RedashContainer
-                    title="Total content page load time (no 95th)"
-                    redashDataUrl="https://sql.telemetry.mozilla.org/api/queries/59395/results.json?api_key=2L0YcuUULtECr9bfew9OAEgtC50G4Ri8NCSPLR5F"
-                    redashQueryUrl="https://sql.telemetry.mozilla.org/queries/59395"
-                    timeDomain={timeDomain}
-                  />
-                </Grid>
-                <Grid item xs={6}>
-                  <RedashContainer
-                    title="Total content page load time"
-                    redashDataUrl="https://sql.telemetry.mozilla.org/api/queries/59397/results.json?api_key=u9eculhXgxqgsluxYGxfXaWQ6g7KCXioEvfwjK83"
-                    redashQueryUrl="https://sql.telemetry.mozilla.org/queries/59397"
-                    timeDomain={timeDomain}
-                  />
-                </Grid>
+        {SHOW_TELEMETRY && (
+          <Section title="Telemetry">
+            <Grid container spacing={1}>
+              <Grid item xs={6}>
+                <RedashContainer
+                  title="Total content page load time (no 95th)"
+                  redashDataUrl="https://sql.telemetry.mozilla.org/api/queries/59395/results.json?api_key=2L0YcuUULtECr9bfew9OAEgtC50G4Ri8NCSPLR5F"
+                  redashQueryUrl="https://sql.telemetry.mozilla.org/queries/59395"
+                  timeDomain={timeDomain}
+                />
               </Grid>
-            </Section>
-            )}
-        <Section
-          title={`Media Playback - ${mediaPlaybackBrowser.label}`}
-        >
+              <Grid item xs={6}>
+                <RedashContainer
+                  title="Total content page load time"
+                  redashDataUrl="https://sql.telemetry.mozilla.org/api/queries/59397/results.json?api_key=u9eculhXgxqgsluxYGxfXaWQ6g7KCXioEvfwjK83"
+                  redashQueryUrl="https://sql.telemetry.mozilla.org/queries/59397"
+                  timeDomain={timeDomain}
+                />
+              </Grid>
+            </Grid>
+          </Section>
+        )}
+        <Section title={`Media Playback - ${mediaPlaybackBrowser.label}`}>
           <Grid container spacing={1}>
             <Grid item xs={6} key="1">
               <PlaybackSummary
@@ -244,102 +236,64 @@ class Android extends Component {
           subtitle="Lower in the graph is better regardless if it is a score or execution time (read the Y label)"
         >
           <Grid container spacing={1}>
+            {PLATFORMS.map(({ label, filter, id }) => (
+              <Grid item xs={6} key={id}>
+                <PerfherderGraphContainer
+                  timeDomain={timeDomain}
+                  title={`Speedometer ${label}`}
+                  series={selectFrom(COMBOS)
+                    .where({ suite: 'speedometer' })
+                    .map(
+                      ({ browserLabel, filter: browserSuiteFilter, test }) => ({
+                        label: browserLabel,
+                        filter: {
+                          and: [test, filter, browserSuiteFilter],
+                        },
+                      }),
+                    )
+                    .toArray()}
+                  missingDataInterval={10}
+                />
+              </Grid>
+            ))}
             <Grid item xs={6}>
-              <PerfherderGraphContainer
+              <PowerSummary
+                key="power"
+                suite="speedometer"
                 timeDomain={timeDomain}
-                title="Speedometer"
-                series={[
-                  {
-                    label: 'Moto G5 (arm7)',
-                    filter: {
-                      and: [
-                        { missing: 'test' },
-                        {
-                          prefix: { platform: 'android-hw-g5-7-0-arm7-api-16' },
-                        },
-                        {
-                          eq: {
-                            framework: 10,
-                            repo: 'mozilla-central',
-                            suite: 'raptor-speedometer-geckoview',
-                          },
-                        },
-                      ],
-                    },
-                  },
-                  {
-                    label: 'Pixel 2 (ARM64)',
-                    filter: {
-                      and: [
-                        { missing: 'test' },
-                        {
-                          eq: {
-                            framework: 10,
-                            options: 'opt',
-                            platform: 'android-hw-p2-8-0-android-aarch64',
-                            repo: 'mozilla-central',
-                            suite: 'raptor-speedometer-geckoview',
-                          },
-                        },
-                      ],
-                    },
-                  },
-                ]}
-                missingDataInterval={10}
+                platform="g5"
+                title="Speedometer CPU power usage Moto G5 (arm7)"
               />
             </Grid>
             <Grid item xs={6}>
               <PowerSummary
                 key="power"
-                browser="geckoview"
                 suite="speedometer"
                 timeDomain={timeDomain}
+                platform="p2-aarch64"
+                title="Speedometer CPU power usage Pixel 2 (aarch64)"
               />
             </Grid>
-            <Grid item xs={6}>
-              <PerfherderGraphContainer
-                timeDomain={timeDomain}
-                title="Unity WebGl"
-                series={[
-                  {
-                    label: 'Moto G5 (arm7)',
-                    filter: {
-                      and: [
-                        { missing: 'test' },
-                        {
-                          eq: {
-                            framework: 10,
-                            repo: 'mozilla-central',
-                            suite: 'raptor-unity-webgl-geckoview',
-                          },
+            {PLATFORMS.map(({ label, filter, id }) => (
+              <Grid item xs={6} key={id}>
+                <PerfherderGraphContainer
+                  timeDomain={timeDomain}
+                  title={`Unity WebGl ${label}`}
+                  series={selectFrom(COMBOS)
+                    .where({ suite: 'unity' })
+                    .map(
+                      ({ browserLabel, filter: browserSuiteFilter, test }) => ({
+                        label: browserLabel,
+                        filter: {
+                          and: [test, filter, browserSuiteFilter],
                         },
-                        {
-                          prefix: { platform: 'android-hw-g5-7-0-arm7-api-16' },
-                        },
-                      ],
-                    },
-                  },
-                  {
-                    label: 'Pixel 2 (ARM64)',
-                    filter: {
-                      and: [
-                        { missing: 'test' },
-                        {
-                          eq: {
-                            framework: 10,
-                            options: 'opt',
-                            platform: 'android-hw-p2-8-0-android-aarch64',
-                            repo: 'mozilla-central',
-                            suite: 'raptor-unity-webgl-geckoview',
-                          },
-                        },
-                      ],
-                    },
-                  },
-                ]}
-                missingDataInterval={10}
-              />
-            </Grid>
+                      }),
+                    )
+                    .toArray()}
+                  missingDataInterval={10}
+                />
+              </Grid>
+            ))}
           </Grid>
         </Section>
       </DashboardPage>

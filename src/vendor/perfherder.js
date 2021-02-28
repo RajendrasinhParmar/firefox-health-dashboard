@@ -53,7 +53,8 @@ const getFramework = async ({ repo, framework }) => {
       // ADD OPTION SIGNATURES
       const lookup = await getAllOptions;
       const clean = toPairs(rawData)
-        .map((meta, signature) => {
+      // eslint-disable-next-line no-unused-vars
+        .map((meta, signatureId) => {
           const { suite, test, lower_is_better } = meta;
           const cleanTest = (() => {
             if (missing(test)) return null;
@@ -103,6 +104,9 @@ const getFramework = async ({ repo, framework }) => {
             ) {
               lowerIsBetter = true;
               unit = 'Duration';
+            } else if (meta.framework_id === 13 && suite.endsWith('-cold')) {
+              lowerIsBetter = true;
+              unit = meta.measurement_unit;
             } else {
               if (DEBUG) {
                 Log.note('Do not have direction for {{suite}}', { suite });
@@ -114,7 +118,7 @@ const getFramework = async ({ repo, framework }) => {
           }
 
           return {
-            signature,
+            signature: meta.signature_hash,
             suite,
             test: cleanTest,
             lowerIsBetter,
@@ -125,7 +129,10 @@ const getFramework = async ({ repo, framework }) => {
             parent: meta.parent_signature,
             id: meta.id,
             framework: meta.framework_id,
+            application: meta.application,
             repo,
+            cold: Boolean(meta.extra_options) && meta.extra_options.includes('cold'),
+            fission: Boolean(meta.extra_options) && meta.extra_options.includes('fission'),
           };
         })
         .toArray();

@@ -3,8 +3,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import './index.css';
-import Routes from './routes';
 import { reportOrLog } from './vendor/errors';
+import Decommission from './decommission';
 
 require('typeface-roboto');
 
@@ -46,7 +46,7 @@ const root = document.getElementById('root');
 const load = () => render(
   <AppContainer>
     <GlobalErrorBoundary>
-      <Routes />
+      <Decommission />
     </GlobalErrorBoundary>
   </AppContainer>,
   root,

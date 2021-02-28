@@ -34,10 +34,9 @@ exports[`renders correctly 1`] = `
         title="Home"
       >
         <svg
-          aria-hidden="true"
+          aria-hidden={true}
           className="MuiSvgIcon-root"
           focusable="false"
-          role="presentation"
           style={
             Object {
               "margin": "0 .2rem 0 .2rem",
@@ -56,10 +55,9 @@ exports[`renders correctly 1`] = `
         title="Android Performance"
       >
         <svg
-          aria-hidden="true"
+          aria-hidden={true}
           className="MuiSvgIcon-root"
           focusable="false"
-          role="presentation"
           style={
             Object {
               "margin": "0 .2rem 0 .2rem",
@@ -78,10 +76,9 @@ exports[`renders correctly 1`] = `
         title="Windows 64 Performance"
       >
         <svg
-          aria-hidden="true"
+          aria-hidden={true}
           className="MuiSvgIcon-root"
           focusable="false"
-          role="presentation"
           style={
             Object {
               "margin": "0 .2rem 0 .2rem",
@@ -100,10 +97,9 @@ exports[`renders correctly 1`] = `
         title="Power Usage"
       >
         <svg
-          aria-hidden="true"
+          aria-hidden={true}
           className="MuiSvgIcon-root"
           focusable="false"
-          role="presentation"
           style={
             Object {
               "margin": "0 .2rem 0 .2rem",
@@ -122,10 +118,9 @@ exports[`renders correctly 1`] = `
         title="Playback"
       >
         <svg
-          aria-hidden="true"
+          aria-hidden={true}
           className="MuiSvgIcon-root"
           focusable="false"
-          role="presentation"
           style={
             Object {
               "margin": "0 .2rem 0 .2rem",
@@ -140,14 +135,34 @@ exports[`renders correctly 1`] = `
         </svg>
       </a>
       <a
+        href="/fission"
+        title="Fission Comparison"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root"
+          focusable="false"
+          style={
+            Object {
+              "margin": "0 .2rem 0 .2rem",
+              "verticalAlign": "baseline",
+            }
+          }
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 11H1v2h6v-2zm2.17-3.24L7.05 5.64 5.64 7.05l2.12 2.12 1.41-1.41zM13 1h-2v6h2V1zm5.36 6.05l-1.41-1.41-2.12 2.12 1.41 1.41 2.12-2.12zM17 11v2h6v-2h-6zm-5-2c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm2.83 7.24l2.12 2.12 1.41-1.41-2.12-2.12-1.41 1.41zm-9.19.71l1.41 1.41 2.12-2.12-1.41-1.41-2.12 2.12zM11 23h2v-6h-2v6z"
+          />
+        </svg>
+      </a>
+      <a
         href="https://github.com/mozilla-frontend-infra/firefox-health-dashboard/"
         title="Source Code"
       >
         <svg
-          aria-hidden="true"
+          aria-hidden={true}
           className="MuiSvgIcon-root"
           focusable="false"
-          role="presentation"
           style={
             Object {
               "margin": "0 .2rem 0 .2rem",
@@ -162,10 +177,9 @@ exports[`renders correctly 1`] = `
         </svg>
       </a>
       <svg
-        aria-hidden="true"
+        aria-hidden={true}
         className="MuiSvgIcon-root"
         focusable="false"
-        role="presentation"
         style={
           Object {
             "margin": "0 .2rem 0 .2rem",
@@ -182,10 +196,10 @@ exports[`renders correctly 1`] = `
   </div>
   <div>
     <div
-      className="Section-header-16"
+      className="Section-header-7"
     >
       <h2
-        className="Section-title-17"
+        className="Section-title-8"
       >
         <span>
           Details by site
@@ -193,7 +207,7 @@ exports[`renders correctly 1`] = `
       </h2>
     </div>
     <div
-      className="Section-content-15"
+      className="Section-content-6"
     >
       <div
         className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
@@ -206,7 +220,7 @@ exports[`renders correctly 1`] = `
           >
             <form
               autoComplete="off"
-              className="Picker-root-122"
+              className="Picker-root-10"
             >
               <div
                 className="MuiFormControl-root MuiTextField-root"
@@ -223,7 +237,7 @@ exports[`renders correctly 1`] = `
                 >
                   <div
                     aria-haspopup="listbox"
-                    aria-labelledby=" mui-component-select-test"
+                    aria-labelledby="mui-component-select-test"
                     className="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
                     id="mui-component-select-test"
                     onBlur={[Function]}
@@ -243,10 +257,9 @@ exports[`renders correctly 1`] = `
                     value="cold-loadtime"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root MuiSelect-icon"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -258,7 +271,7 @@ exports[`renders correctly 1`] = `
             </form>
             <form
               autoComplete="off"
-              className="Picker-root-122"
+              className="Picker-root-10"
             >
               <div
                 className="MuiFormControl-root MuiTextField-root"
@@ -275,7 +288,7 @@ exports[`renders correctly 1`] = `
                 >
                   <div
                     aria-haspopup="listbox"
-                    aria-labelledby=" mui-component-select-browserPlatform"
+                    aria-labelledby="mui-component-select-browserPlatform"
                     className="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
                     id="mui-component-select-browserPlatform"
                     onBlur={[Function]}
@@ -295,10 +308,9 @@ exports[`renders correctly 1`] = `
                     value="fenix-g5"
                   />
                   <svg
-                    aria-hidden="true"
+                    aria-hidden={true}
                     className="MuiSvgIcon-root MuiSelect-icon"
                     focusable="false"
-                    role="presentation"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -310,7 +322,7 @@ exports[`renders correctly 1`] = `
             </form>
             <form
               autoComplete="off"
-              className="DurationPickerPre-root-196"
+              className="DurationPickerPre-root-11"
               style={
                 Object {
                   "width": "8rem",
@@ -318,13 +330,13 @@ exports[`renders correctly 1`] = `
               }
             >
               <label
-                className="MuiFormLabel-root MuiInputLabel-root DurationPickerPre-label-197 MuiInputLabel-animated"
+                className="MuiFormLabel-root MuiInputLabel-root DurationPickerPre-label-12 MuiInputLabel-animated"
                 htmlFor="past"
               >
                 Show past
               </label>
               <div
-                className="DurationPickerPre-value-198"
+                className="DurationPickerPre-value-13"
               >
                 month
               </div>
@@ -405,112 +417,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
-              >
-                Tp6 mobile: Aframe.io
-                <span
-                  onClick={[Function]}
-                  style={
-                    Object {
-                      "cursor": "pointer",
-                    }
-                  }
-                  title="show image for copy"
-                >
-                  <div
-                    style={
-                      Object {
-                        "display": "inline-block",
-                        "margin": "-1rem 0",
-                        "verticalAlign": "middle",
-                      }
-                    }
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="MuiSvgIcon-root"
-                      focusable="false"
-                      role="presentation"
-                      style={
-                        Object {
-                          "margin": "0 .2rem 0 .2rem",
-                          "verticalAlign": "baseline",
-                        }
-                      }
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"
-                      />
-                    </svg>
-                  </div>
-                </span>
-              </h2>
-              <div
-                style={
-                  Object {
-                    "height": 80,
-                    "position": "relative",
-                  }
-                }
-              >
-                <div
-                  style={
-                    Object {
-                      "position": "absolute",
-                      "right": "50%",
-                      "top": "50%",
-                    }
-                  }
-                >
-                  <div
-                    className="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
-                    role="progressbar"
-                    style={
-                      Object {
-                        "height": 40,
-                        "width": 40,
-                      }
-                    }
-                  >
-                    <svg
-                      className="MuiCircularProgress-svg"
-                      viewBox="22 22 44 44"
-                    >
-                      <circle
-                        className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
-                        cx={44}
-                        cy={44}
-                        fill="none"
-                        r={20.2}
-                        strokeWidth={3.6}
-                        style={Object {}}
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="MuiGrid-root TP6M-chart-2 MuiGrid-item MuiGrid-grid-xs-6"
-        >
-          <div
-            style={
-              Object {
-                "position": "relative",
-              }
-            }
-          >
-            <div
-              className="ChartJsWrapper-chartContainer-219"
-            >
-              <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: All Recipes
                 <span
@@ -532,10 +442,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -609,10 +518,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Amazon
                 <span
@@ -634,10 +543,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -711,10 +619,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Amazon Search
                 <span
@@ -736,10 +644,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -813,10 +720,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: BBC
                 <span
@@ -838,10 +745,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -915,10 +821,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Bing
                 <span
@@ -940,10 +846,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -1017,10 +922,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Bing Restaurants
                 <span
@@ -1042,10 +947,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -1119,10 +1023,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Booking
                 <span
@@ -1144,10 +1048,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -1221,10 +1124,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: CNN
                 <span
@@ -1246,10 +1149,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -1323,10 +1225,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: CNN AmpStories
                 <span
@@ -1348,10 +1250,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -1425,10 +1326,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: ESPN
                 <span
@@ -1450,10 +1351,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -1527,10 +1427,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Facebook
                 <span
@@ -1552,10 +1452,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -1629,10 +1528,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Facebook Cristiano
                 <span
@@ -1654,10 +1553,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -1731,10 +1629,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Google
                 <span
@@ -1756,10 +1654,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -1833,10 +1730,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Google Maps
                 <span
@@ -1858,10 +1755,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -1935,10 +1831,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Google Restaurants
                 <span
@@ -1960,10 +1856,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -2037,10 +1932,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Imdb
                 <span
@@ -2062,10 +1957,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -2139,10 +2033,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Instagram
                 <span
@@ -2164,10 +2058,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -2241,10 +2134,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Jianshu
                 <span
@@ -2266,10 +2159,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -2343,10 +2235,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Kleinanzeigen
                 <span
@@ -2368,10 +2260,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -2445,10 +2336,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Kleinanzeigen Search
                 <span
@@ -2470,10 +2361,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -2547,10 +2437,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Microsoft Support
                 <span
@@ -2572,10 +2462,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -2649,10 +2538,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Reddit
                 <span
@@ -2674,10 +2563,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -2751,10 +2639,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Stackoverflow
                 <span
@@ -2776,10 +2664,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -2853,10 +2740,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Web.de
                 <span
@@ -2878,10 +2765,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -2955,10 +2841,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: Wikipedia
                 <span
@@ -2980,10 +2866,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -3057,10 +2942,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: YouTube
                 <span
@@ -3082,10 +2967,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
@@ -3159,10 +3043,10 @@ exports[`renders correctly 1`] = `
             }
           >
             <div
-              className="ChartJsWrapper-chartContainer-219"
+              className="ChartJsWrapper-chartContainer-17"
             >
               <h2
-                className="ChartJsWrapper-title-220"
+                className="ChartJsWrapper-title-18"
               >
                 Tp6 mobile: YouTube Watch
                 <span
@@ -3184,10 +3068,9 @@ exports[`renders correctly 1`] = `
                     }
                   >
                     <svg
-                      aria-hidden="true"
+                      aria-hidden={true}
                       className="MuiSvgIcon-root"
                       focusable="false"
-                      role="presentation"
                       style={
                         Object {
                           "margin": "0 .2rem 0 .2rem",
